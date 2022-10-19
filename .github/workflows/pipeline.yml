@@ -40,10 +40,10 @@ jobs:
     - name: Terraform Plan
       run: terraform plan -input=false
 
-  build:
+  deploy:
     runs-on: ubuntu-latest
     name: 'Deploy'
-    needs: [terraform]
+    needs: [build]
     steps:
     - name: Terraform Apply
       run: terraform apply -auto-approve -input=false
