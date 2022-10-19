@@ -17,6 +17,6 @@ provider "google" {
 # Cloud Storage
 
 resource "google_storage_bucket" "default" {
-  name = "bucket-atlas-violencia"
+  name = "bucket-atlas-violencia-2"
   location = "US"
 }
