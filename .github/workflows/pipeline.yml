@@ -32,9 +32,9 @@ jobs:
     - name: Terraform Validate
       run: terraform validate
 
-  validate:
+  build:
     runs-on: ubuntu-latest
-    name: 'Validate'
+    name: 'Build'
     steps:
     - name: Terraform Plan
       run: terraform plan -input=false
