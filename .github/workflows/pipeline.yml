@@ -35,13 +35,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
     name: 'Build'
+    needs: [terraform]
     steps:
     - name: Terraform Plan
       run: terraform plan -input=false
 
-  deploy:
+  build:
     runs-on: ubuntu-latest
     name: 'Deploy'
+    needs: [terraform]
     steps:
     - name: Terraform Apply
       run: terraform apply -auto-approve -input=false
