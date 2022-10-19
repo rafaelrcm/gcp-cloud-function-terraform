@@ -7,6 +7,13 @@ terraform {
   }
 }
 
+terraform {
+  backend "gcs" {
+   bucket  = "bucket-atlas-violencia-devops"
+   prefix  = "terraform/state"
+ }
+}
+
 provider "google" {
   credentials = file("usuario.json")
   project = "axiomatic-treat-361001"
