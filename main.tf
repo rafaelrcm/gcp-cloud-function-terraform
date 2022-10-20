@@ -9,7 +9,6 @@ terraform {
   backend "gcs" {
     bucket  = "bucket-atlas-violencia-devops"
     prefix  = "terraform/state"
-    credentials = file("usuario.json")
   }
 }
 
