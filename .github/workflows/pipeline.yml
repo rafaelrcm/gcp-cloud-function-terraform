@@ -1,23 +1,15 @@
 name: 'Terraform'
 
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-
-env:
-  BUCKET:  "bucket-atlas-violencia-devops"
+  workflow_dispatch:
 
 jobs:
-  terraform:
+  validate:
     name: 'Validate'
     runs-on: ubuntu-latest
-
-    defaults:
-      run:
-        shell: bash
   
     steps:
+
     - name: Checkout
       uses: actions/checkout@v3
 
@@ -33,7 +25,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     name: 'Build'
-    needs: [terraform]
+    needs: [validate]
+
     steps:
 
     - name: Checkout
@@ -52,6 +45,7 @@ jobs:
     runs-on: ubuntu-latest
     name: 'Deploy'
     needs: [build]
+    
     steps:
 
     - name: Checkout
