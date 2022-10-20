@@ -5,6 +5,9 @@ on:
     branches: [ "main" ]
   pull_request:
 
+env:
+  BUCKET:  "bucket-atlas-violencia-devops"
+
 jobs:
   terraform:
     name: 'Validate'
@@ -22,7 +25,7 @@ jobs:
       uses: hashicorp/setup-terraform@v1
 
     - name: Terraform Init
-      run: terraform init
+      run: terraform init -backend-config="bucket=$BUCKET"
 
     - name: Terraform Validate
       run: terraform validate
@@ -40,7 +43,7 @@ jobs:
       uses: hashicorp/setup-terraform@v1
 
     - name: Terraform Init
-      run: terraform init
+      run: terraform init -backend-config="bucket=$BUCKET"
 
     - name: Terraform Plan
       run: terraform plan -input=false
@@ -58,7 +61,7 @@ jobs:
       uses: hashicorp/setup-terraform@v1
 
     - name: Terraform Init
-      run: terraform init
+      run: terraform init -backend-config="bucket=$BUCKET"
 
     - name: Terraform Apply
       run: terraform apply -auto-approve -input=false
