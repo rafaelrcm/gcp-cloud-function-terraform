@@ -5,6 +5,11 @@ terraform {
       version = "3.5.0"
     }
   }
+
+  backend "gcs" {
+    bucket  = "bucket-atlas-violencia-devops"
+    prefix  = "terraform/state"
+  }
 }
 
 provider "google" {
