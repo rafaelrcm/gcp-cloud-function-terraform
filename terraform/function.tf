@@ -1,6 +1,6 @@
 data "archive_file" "zip_my_function" {
   type        = "zip"
-  source_dir = "function_atlas_violencia"
+  source_dir = "../function_atlas_violencia"
   output_path = "function_atlas_violencia.zip"
 }
 
