@@ -41,7 +41,7 @@ resource "google_cloudfunctions_function" "function_atlas_violencia" {
   entry_point           = "function_atlas_violencia"
   timeout               = 540
   available_memory_mb   = 512
-  source_archive_bucket = google_storage_bucket.bucket.name
+  source_archive_bucket = "bucket-atlas-violencia-devops"
   source_archive_object = google_storage_bucket_object.archive.name
   event_trigger {
     event_type = "google.storage.object.finalize"
