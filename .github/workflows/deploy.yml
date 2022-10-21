@@ -7,6 +7,9 @@ jobs:
   validate:
     name: 'Validate'
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: terraform
   
     steps:
 
@@ -26,6 +29,9 @@ jobs:
     runs-on: ubuntu-latest
     name: 'Build'
     needs: [validate]
+    defaults:
+      run:
+        working-directory: terraform
 
     steps:
 
@@ -45,6 +51,9 @@ jobs:
     runs-on: ubuntu-latest
     name: 'Deploy'
     needs: [build]
+    defaults:
+      run:
+        working-directory: terraform
     
     steps:
 

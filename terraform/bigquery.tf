@@ -8,5 +8,5 @@ resource "google_bigquery_table" "default" {
   description                = "Homicídios por Estado"
   table_id                   = "homicidios_por_estado"
   depends_on                 = [google_bigquery_dataset.default]
-  schema                     = file("${path.root}/schema/schema.json")
+  schema                     = file("${path.root}/../schema/schema.json")
 }

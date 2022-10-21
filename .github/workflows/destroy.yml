@@ -7,6 +7,9 @@ jobs:
   validate:
     name: 'Destroy'
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: terraform
   
     steps:
 
