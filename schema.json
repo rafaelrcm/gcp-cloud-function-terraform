@@ -1,0 +1,26 @@
+[
+  {
+    "name": "codigo",
+    "type": "INTEGER",
+    "mode": "NULLABLE",
+    "description": "Codigo do Estado"
+  },
+  {
+    "name": "estado",
+    "type": "STRING",
+    "mode": "NULLABLE",
+    "description": "Nome do Estado"
+  },
+  {
+    "name": "ano",
+    "type": "INTEGER",
+    "mode": "NULLABLE",
+    "description": "Ano da Pesquisa"
+  },
+  {
+    "name": "mortes",
+    "type": "INTEGER",
+    "mode": "NULLABLE",
+    "description": "Quantidade de Mortes"
+  }
+]
